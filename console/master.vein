@@ -1,0 +1,19 @@
+#space "std"
+
+public class Testable
+{
+    public static master(): Void
+    {
+        auto text = get_str_args(0);
+        auto len = get_i32_args(1);
+
+        for (auto i = 0; i != len; i++) {
+		  Out.print(text);
+		}
+    }
+
+    [native("__internal__", "get_str_args")]
+    public static extern get_str_args(i: i32): String;
+    [native("__internal__", "get_i32_args")]
+    public static extern get_i32_args(i: i32): i32;
+}
